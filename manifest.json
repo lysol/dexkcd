@@ -1,0 +1,15 @@
+{
+  "name": "dexkcd",
+  "version": "1.0",
+  "description": "Remove XKCD from the internet",
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "permissions": [
+    "http://dexkcd.brainindustries.com/",
+    "http://github.com/",
+    "http://jashkenas.github.com/coffee-script/extras/coffee-script.js",
+    "http://github.com/lysol/dexkcd/stable/dexkcd.coffee"
+  ],
+  "background_page": "background.html"
+}
