@@ -1,1 +1,1 @@
-testDeXKCD = () -> alert "Test!"
+testDeXKCD = () -> console.log "Test!"
