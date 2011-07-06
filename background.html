@@ -1,7 +1,15 @@
 <html>
   <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script src="http://jashkenas.github.com/coffee-script/extras/coffee-script.js"></script>
-  <script type="text/coffeescript" src="dexkcd.coffee"></script>
+  <script type="text/coffeescript">
+ 
+  chrome.extension.onConnect.addListener (port) ->
+    port.onMessage.addListener (msg) ->
+      if msg.action == 'checkImage'
+          console.log msg.src
+          port.postMessage "index": msg.index, "action": 'destroy'
+
+  </script>
   </head>
 </html>

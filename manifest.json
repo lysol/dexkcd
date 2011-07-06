@@ -3,19 +3,22 @@
   "version": "1.0",
   "description": "Remove XKCD from the internet",
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "icon.png"
   },
   "permissions": [
-    "http://dexkcd.brainindustries.com/",
-    "http://jashkenas.github.com/coffee-script/extras/coffee-script.js",
-    "http://raw.github.com/lysol/dexkcd/master/dexkcd.coffee",
-    "http://ajax.googleapis.com/"
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "contextMenus",
+    "background"
   ],
-  "background_page": "background.html"
-  "content-scripts": [
+  "background_page": "background.html",
+  "content_scripts": [
     {
-      "matches": ["*"],
-      "js": ["lib/dexkcd.js"]
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lib/dexkcd.js"],
+      "run_at": "document_end",
+      "all_frames": true
     }
   ]
 }
