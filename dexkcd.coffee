@@ -1,1 +1,1 @@
-alert "Test!"
+testDeXKCD = () -> alert "Test!"
